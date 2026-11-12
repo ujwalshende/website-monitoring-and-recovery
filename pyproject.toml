@@ -1,0 +1,23 @@
+[project]
+name = "boto"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Ujwal Shende", email = "ujwal.shende@tum.de" }
+]
+requires-python = ">=3.15"
+dependencies = [
+    "boto3>=1.43.123",
+    "linode-api4>=5.49.0",
+    "paramiko>=5.1.0",
+    "requests>=2.34.2",
+    "schedule>=1.2.2",
+]
+
+[project.scripts]
+boto = "boto:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
