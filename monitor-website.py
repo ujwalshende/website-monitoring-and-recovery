@@ -43,7 +43,7 @@ def restart_server_and_container():
         time.sleep(1)
         nginx_server = client.load(linode_api4.Instance, 111079235)
         if nginx_server.status == "running":
-            time.sleep(20)
+            time.sleep(30)
             restart_container()
             break
 
