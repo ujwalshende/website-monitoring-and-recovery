@@ -6,3 +6,6 @@ Note: For simplicity I have hardcoded the public-ip address of my server and the
 ## How to use this project
 1. Install the virtual env by executing `uv sync`
 2. Run the script using `uv run monitor-website.py`
+
+## Example output once the script reboots the node and restarts the application
+<img width="988" height="328" alt="image" src="https://github.com/user-attachments/assets/667897d0-0378-4491-a41b-28368a5b60da" />
