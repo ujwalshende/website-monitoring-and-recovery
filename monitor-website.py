@@ -40,6 +40,7 @@ def restart_server_and_container():
     nginx_server = client.load(linode_api4.Instance, 109800069)
     nginx_server.reboot() # type: ignore
     while True:
+        time.sleep(1)
         nginx_server = client.load(linode_api4.Instance, 109800069)
         if nginx_server.status == "running":
             time.sleep(20)
@@ -49,7 +50,7 @@ def restart_server_and_container():
 def monitor_application():
 
     try:
-        response = requests.get("http://139-162-189-133.ip.linodeusercontent.com:8080/")
+        response = requests.get("http://139-162-189-133.ip.linodeusercontent.com:8080/", timeout=5)
         if response.status_code == 200:
             print("Application running successfully")
         else:
@@ -70,5 +71,6 @@ def monitor_application():
 schedule.every(5).minutes.do(monitor_application)
 
 while True:
+    time.sleep(1)
     schedule.run_pending()
 
